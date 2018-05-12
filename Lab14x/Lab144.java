@@ -16,7 +16,7 @@ public class Lab144 {
 
         j=i;
         j--;
-        System.out.println(String.format("Post-increment of the 15: %s",j));
+        System.out.println(String.format("Post-decrement of the 15: %s",j));
 
     }
 }
