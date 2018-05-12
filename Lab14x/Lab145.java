@@ -2,10 +2,11 @@ package com.company.Lab14x;
 
 public class Lab145 {
     public static void main(String[] args) {
-        int i = -5;
+        int a = -5;
+        int b = 14;
 
-        System.out.println(i << 4);
-        System.out.println(i >> 2);
-        System.out.println(i >>> 1);
+        System.out.println(String.format("Bit shift: %s, multiplying: %s",a<<4, b*16));
+        System.out.println(String.format("Bit shift: %s, dividing: %s",a>>2,b/32));
+        System.out.println(String.format("Bit shift: %s, multiplying: %s",a>>>1,b*128));
     }
 }
