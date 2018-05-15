@@ -1,27 +1,21 @@
-package com.company.Lab15x;
+package com.mainacademy.lessons.lesson1;
 
 import java.util.Scanner;
 
 public class Lab156 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Entar a number between 10 and 99: ");
+        System.out.print("Enter number: ");
         int x = scanner.nextInt();
+        String numberS = String.valueOf(x);
+        int[] intArray = new int[numberS.length()];
+        int sum = 0;
 
-        while (true){
-            String preconditions = "The loop has been used";
-            break;
+        for (int i = 0; i <intArray.length ; i++) {
+            intArray[i]=Character.getNumericValue(numberS.charAt(i));
+            sum = sum + (int)Math.pow(intArray[i],2);
         }
 
-        if (x < 10) {
-            System.out.println("The number is too small");
-        } else if (x < 100){
-            int d1 = x%10;
-            int d2 = x/10;
-            System.out.println(String.format
-                    ("The sum of squares of digits of %s is %s", x,(int) (Math.pow(d1, 2) + Math.pow (d2, 2))));
-        } else {
-            System.out.println("The number is too big");
-        }
+        System.out.println(String.format("The sum of squares of digits of \"%s\" equals to %s", x, sum));
     }
 }
