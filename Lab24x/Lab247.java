@@ -12,8 +12,8 @@ public class GravityCalculator {
         double distance = 0;
         double v = 0;
         for (int time = 0; time < finalTime; time++) {
-            distance = 0.5 * ACCELERATION * Math.pow(time, 2) + v * time + distance;
             v = v + ACCELERATION;
+            distance = 0.5 * ACCELERATION * Math.pow(time, 2) + v * time + distance;
         }
         return distance;
     }
