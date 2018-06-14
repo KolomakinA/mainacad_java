@@ -3,22 +3,21 @@ package edu.testenum2;
 public class Main {
     public static void main(String[] args) {
         Card[] deck = new Card[52];
-
-        for (int i = 0; i < deck.length; i++) {
-            deck[i]= new Card(
-                    Suit.SPADE,
-                    Rank.ACE);
-        }
+        int i = 0;
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                deck[i] = new Card(suit,rank);
+                System.out.println(deck[i]);
+                i++;
+                }
+            }
         }
     }
     enum Suit{
         SPADE,
         DIAMOND,
         CLUB,
-        HEART;
-        Suit next(){
-            return Suit.values()[this.ordinal()+1];
-        }
+        HEART
     }
 
     enum Rank{
@@ -26,11 +25,7 @@ public class Main {
         FOUR,        FIVE,        SIX,
         SEVEN,        EIGHT,        NINE,
         TEN,        JACK,        QUEEN,
-        KING;
-        
-        Rank next(){
-            return Rank.values()[this.ordinal()+1];
-        }
+        KING
     }
 
     class Card{
@@ -47,4 +42,4 @@ public class Main {
             return String.format("The %s of %s",cardRank.name(),cardSuit.name());
         }
     }
-}
+
